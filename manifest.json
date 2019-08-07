@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Search_stock_info",
+  "short_name": "Search stock info",
+  "description": "searcn stock information using selected text",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+  "permissions": [
+    "contextMenus",
+    "tabs"],
+  "icons": {
+    "16": "assets/favicon.ico"
+  },
+  "background": {"page": "background.html"}
+}
