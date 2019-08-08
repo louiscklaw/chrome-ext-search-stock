@@ -1,3 +1,4 @@
+//
 searchStockPrice = function(word){
   var query = word.selectionText;
 
@@ -25,7 +26,6 @@ searchStockAll = function(word)
   searchStockPrice(word);
 }
 
-
 chrome.contextMenus.create({
   title: "_search all",
   contexts:["selection"],
@@ -42,4 +42,20 @@ chrome.contextMenus.create({
   title: "search stock graph",
   contexts:["selection"],
   onclick: searchStockGraph
+});
+
+searchPriceOnHKEX = function(word){
+  var query = word.selectionText;
+
+  // https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sc_lang=zh-HK&sym=788
+  var octopartTargetUrl = "https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sc_lang=zh-HK&sym=" + query;
+  console.log(octopartTargetUrl);
+  chrome.tabs.create({url: octopartTargetUrl});
+
+};
+
+chrome.contextMenus.create({
+  title: "price on HKEX",
+  contexts:["selection"],
+  onclick: searchPriceOnHKEX
 });
