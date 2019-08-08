@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "parts stock",
+  "short_name": "stock",
+  "description": "stocks for the selected text in the parts",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+  "permissions": [
+    "contextMenus",
+    "tabs"],
+  "icons": {
+    "16": "assets/parts_stock.resized.16.png"
+  },
+  "background": {"page": "background.html"}
+}
