@@ -45,11 +45,13 @@ chrome.contextMenus.create({
 });
 
 searchPriceOnHKEX = function(word){
-  var query = word.selectionText;
+  var selectedText = word.selectionText;
+  var stockNo = selectedText.replace(/^0+/,'');
 
   // https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sc_lang=zh-HK&sym=788
-  var octopartTargetUrl = "https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sc_lang=zh-HK&sym=" + query;
+  var octopartTargetUrl = "https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sc_lang=zh-HK&sym=" + stockNo;
   console.log(octopartTargetUrl);
+  // alert(stockNo);
   chrome.tabs.create({url: octopartTargetUrl});
 
 };
